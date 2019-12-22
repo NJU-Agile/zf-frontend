@@ -1,12 +1,22 @@
+import React, { Component } from 'react';
+import { connect } from 'dva';
 import styles from './index.css';
 
-function BasicLayout(props) {
-  return (
-    <div className={styles.normal}>
-      <h1 className={styles.title}>Yay! Welcome to umi!</h1>
-      {props.children}
-    </div>
-  );
+class BasicLayout extends Component {
+  render() {
+    return (
+      <div className={styles.normal}>
+        <h1 className={styles.title}>Yay! Welcome to umi!</h1>
+        {this.props.children}
+      </div>
+    );
+  }
 }
 
-export default BasicLayout;
+function mapStateToProps(state) {
+  return {
+    // userInfo: state['User'].user,
+  };
+}
+
+export default connect(mapStateToProps)(BasicLayout);
