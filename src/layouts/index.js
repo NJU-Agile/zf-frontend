@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'dva';
-import styles from './index.css';
+import styles from './index.scss';
 
 class BasicLayout extends Component {
   render() {
