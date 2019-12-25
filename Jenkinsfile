@@ -1,14 +1,9 @@
 pipeline {
-  agent {
-    docker {
-      image 'node:8.17-alpine3.11'
-      args '-u root'
-    }
-
-  }
+  agent any
   stages {
     stage('Build') {
       steps {
+        git(url: 'https://github.com/NJU-Agile/zf-frontend', branch: 'Master')
         sh 'npm install'
       }
     }
