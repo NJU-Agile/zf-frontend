@@ -1,8 +1,10 @@
 pipeline {
   agent any
+
   tools {
       nodejs "node"
   }
+
   stages {
     stage('CleanUp'){
         steps{
@@ -12,6 +14,7 @@ pipeline {
     stage('Build') {
       steps {
         git(url: 'https://github.com/NJU-Agile/zf-frontend.git', branch: 'master')
+
         sh 'npm install'
       }
     }
