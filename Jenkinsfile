@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        git(url: 'https://github.com/NJU-Agile/zf-frontend', branch: 'Master')
+        git(url: 'https://github.com/NJU-Agile/zf-frontend.git', branch: 'Master')
         sh 'npm install'
       }
     }
